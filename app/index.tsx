@@ -6,6 +6,8 @@ import {
   FlatList,
   TextInput,
 } from "react-native";
+import { Link } from "expo-router";
+
 import ItemList from "../components/itemList";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,7 +28,6 @@ export default function Index() {
   const [input, setInput] = useState("");
   const [data, setData] = useState(dataTemp);
 
-  
   const plus = () => {
     if (parseInt(input)) {
       setTotal(total + parseInt(input));
@@ -50,11 +51,9 @@ export default function Index() {
   };
 
   useEffect(() => {
-    if (parseInt(input)) {
-      var value = data.reduce((acc, curr) => acc + curr.number, 0);
+    var value = data.reduce((acc, curr) => acc + curr.number, 0);
 
-      setTotal(value);
-    }
+    setTotal(value);
   }, [input, data]);
 
   return (
@@ -93,6 +92,7 @@ export default function Index() {
           <View style={{ marginLeft: 20 }}>
             <Text style={{ fontSize: 20 }}>Họ và tên: </Text>
             <Text style={{ fontSize: 20 }}>MSSV: </Text>
+            <Link href="/index2">Go to Index2</Link>
           </View>
         </View>
       </View>

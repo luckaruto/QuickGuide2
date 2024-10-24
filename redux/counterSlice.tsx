@@ -4,7 +4,9 @@ export const fetchData = createAsyncThunk(
   "counter/fetchData",
   async (_, thunkApi) => {
     try {
-      const res = await fetch("https://swapi.dev/api/films");
+      const res = await fetch(
+        "https://65ee9def08706c584d9bc036.mockapi.io/dummy"
+      );
 
       const data = await res.json(); // Await the json promise
       console.log(data); // Log the parsed data

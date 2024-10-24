@@ -7,8 +7,15 @@ export default function RootLayout() {
   return (
     <Provider store={store}>
       <Stack>
+        {/* Define both index and index2 in the same Stack */}
         <Stack.Screen
           name="index"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="index2"
           options={{
             headerShown: false,
           }}
